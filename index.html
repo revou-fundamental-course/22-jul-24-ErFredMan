@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erick F.M Web</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <!--Login Form (tambahan)-->
+  <body>
+    <div class="login-container">
+      <div class="logoER">
+        <img src="assets/LogoResto.png" />
+      </div>
+      <h2>Please Login Your Account</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <br />
+      <button onclick="login()">LOGIN</button>
+      <div class="message" id="message"></div>
+    </div>
+
+    <!--Navbar-->
+    <nav class="hidden" id="main-content">
+      <!--navbar icon-->
+      <div class="logo-icon">
+        <img src="assets/LogoResto.png" />
+      </div>
+      <section class="nav-container">
+        <li><a href="#home" class="nav-item">HOME</a></li>
+        <li><a href="#achievement" class="nav-item">ACHIEVEMENT</a></li>
+        <li><a href="#message-us" class="nav-item">MESSAGE US</a></li>
+        <button class="logout-button" onclick="logout()">LOGOUT</button>
+      </section>
+    </nav>
+
+    <section class="section hidden" id="main-content">
+      <!--Home-->
+      <section class="home" id="home">
+        <header>
+          <h2 style="text-align: center">
+            HELLO <span id="name"></span>, WELCOME TO ERICK'S RESTAURANT
+          </h2>
+        </header>
+        <div>
+          <p>
+            Founded in 2024, Erick's Restaurant is dedicated to providing delicious, clean, and affordable food to all its patrons. With a commitment to quality and hygiene, Erick's Restaurant ensures that every meal is prepared with the freshest ingredients and utmost care. Whether you're looking for a quick bite or a leisurely dining experience, Erick's Restaurant offers a variety of mouth-watering dishes that cater to diverse tastes and preferences. Come and enjoy a delightful culinary experience that won't break the bank at Erick's Restaurant!
+          </p>
+          <div class="banner-container">
+            <!--Image Slider-->
+            <div class="slider">
+              <div class="slides">
+                <div class="slide" id="slide1">
+                  <img src="assets/Slide1.png" />
+                </div>
+                <div class="slide" id="slide2">
+                  <img src="assets/slide2.png" />
+                </div>
+                <div class="slide" id="slide3">
+                  <img src="assets/slide3.jpg" />
+                </div>
+                <div class="slide" id="slide3">
+                  <img src="assets/slide4.jpg" />
+                </div>
+              </div>
+
+              <button class="Previous" onclick="moveSlide(-1)">Previous</button>
+              <button class="Next" onclick="moveSlide(1)">Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Best Food-->
+      <section class="services-section" id="services">
+        <header>
+          <h2 style="text-align: center">OUR BEST FOOD</h2>
+        </header>
+        <div class="travel-grid" id="travel">
+            <img src="assets/gmbar5.jpg">
+            <div class="descr">Chicken Katsu</div>
+            <img src="assets/gmbar6.jpg">
+            <div class="descr">Chicken Cordon Bleu</div>
+            <img src="assets/gmbar7.webp">
+            <div class="descr">Chicken Steak</div>
+            <img src="assets/gmbar8.jpg">
+            <div class="descr">Chickien Teriyaki</div>
+            <img src="assets/gmbar9.webp">
+            <div class="descr">Chicken Karaage</div>
+            <img src="assets/gmbar10.jpg">
+            <div class="descr">Chicken Vegetables</div>
+        </div>
+      </section>
+      
+      <!--Achievement-->
+      <section class="section">
+        <section class="achievement" id="achievement">
+          <header>
+            <h2  style="text-align: center">ACHIEVEMENT</h2>
+          </header>
+          <div class="achievement-list">
+            <div class="container-achievement">
+              <div class="achievement-img1">
+                <h4>Certificate 1</h4>
+                <img src="assets/Certi1.png" alt="Certificate 1" />
+              </div>
+            </div>
+            <div class="container-achievement">
+              <h4>Certificate 2</h4>
+              <div class="achievement-img2">
+                
+                <img src="assets/Certi2.png" alt="Certificate 2" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!--Message us-->
+      <section class="message-us" id="message-us">
+        <header>
+          <h2 style="text-align: center">MESSAGE US</h2>
+        </header>
+        <section class="message-section">
+          <!--Form-->
+          <section class="form-container">
+            <form id="formulir">
+              <div class="form-group">
+                <label for="nama" class="">Name</label>
+                <input
+                  type="text"
+                  id="nama"
+                  nama="nama"
+                  placeholder="your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="tgl-lahir" class="">Date</label>
+                <input type="date" id="tgl-lahir" name="tgl-lahir" />
+              </div>
+              <div class="form-group">
+                <label>Gender</label>
+                <input
+                  type="radio"
+                  id="lakilaki"
+                  name="jenisKelamin"
+                  value="Laki-laki"
+                  required
+                />
+                <label for="lakilaki">Male</label>
+                <input
+                  type="radio"
+                  id="lakilaki"
+                  name="jenisKelamin"
+                  value="Perempuan"
+                  required
+                />
+                <label for="lakilaki">Female</label>
+              </div>
+              <div class="form-group">
+                <label for="pesan">Message</label>
+                <textarea id="pesan" name="pesan" rows="4" required></textarea>
+              </div>
+              <button class="btn-form" type="submit" id="submit">Submit</button>
+            </form>
+          </section>
+
+          <!--Result-->
+          <section class="result-container">
+            <div class="form-result">
+              <textarea id="result" rows="15" cols="20" readonly></textarea>
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <hr class="hidden" id="main-content" />
+    <footer class="footer hidden" id="main-content">
+      <p style="text-align: right">©2024 Has Created by Erick</p>
+      <!-- Icon Sosmed -->
+      <h2 style="text-align: center">CONTACT US</h2>
+      <div class="sosmed">
+        
+        <a href="https://web.facebook.com/" target="_blank">
+          <img src="assets/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/erickmanus/" target="_blank">
+          <img src="assets/instagram.png" alt="Instagram" />
+        </a>
+        <a href="https://www.tiktok.com/login" target="_blank">
+          <img src="assets/tiktok.png" alt="Tiktok" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/erick-manus-7b8748314/"target="_blank">
+          <img src="assets/linkedin.png" alt="linkedin" />
+        </a>
+      </div>
+    </footer>
+
+    <!--Top Button-->
+    <button
+      onclick="topFunction()"
+      id="myBtn"
+      title="Back to the top"
+      class="hidden"
+      id="main-content">
+      ⭡
+    </button>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
